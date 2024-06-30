@@ -5,14 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Antrian extends Model
+class keterangan extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'nama', 'poli'
-    ];
-
-    // Relasi ke model Pasien jika diperlukan
+    protected $table = 'keterangan';
+    protected $fillable = ['NIK', 'keterangan', 'tanggal'];
+    
     public function pasien()
     {
         return $this->belongsTo(Pasien::class);

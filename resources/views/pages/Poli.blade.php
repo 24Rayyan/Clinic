@@ -10,9 +10,13 @@
                 <p><strong>Nama:</strong> {{ $pasien->nama }}</p>
                 <p><strong>Alamat:</strong> {{ $pasien->alamat }}</p>
             </div>
-            <form action="{{ route('antrian.store', $pasien->id) }}" method="POST">
+            <form action="{{ route('antrian.store')}}" method="POST">
                 @csrf
                 <input type="hidden" name="poli" value="{{ $pasien->poli }}">
+                <input type="hidden" name="nama" value="{{ $pasien->nama }}">
+                <input type="hidden" name="NIK" value="{{ $pasien->NIK }}">
+                <input type="hidden" name="usia" value="{{ $pasien->usia }}">
+                <input type="hidden" name="alamat" value="{{ $pasien->alamat }}">
                 <div class="form-group">
                     <label for="poli">Pilih Poli:</label>
                     <select name="poli" id="poli" class="form-control">

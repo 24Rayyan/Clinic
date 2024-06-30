@@ -2,20 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class TabelUmum extends Model
 {
-    use HasFactory;
+    // Tentukan nama tabel secara eksplisit jika berbeda dari konvensi penamaan default
     protected $table = 'tabel_umum';
-
-    protected $fillable = [
-        'pasien_id',
-    ];
-
-    public function pasien()
-    {
-        return $this->belongsTo(Pasien::class);
-    }
+    
+    protected $fillable = ['nama', 'NIK', 'usia', 'alamat'];
 }

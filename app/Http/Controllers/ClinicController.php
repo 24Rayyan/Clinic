@@ -10,7 +10,7 @@ use App\Models\TabelMata;
 use App\Models\TabelSpesialis;
 use App\Models\TabelUmum;
 use App\Models\TabelTHT;
-
+use Illuminate\Support\Facades\Log;
 
 
 
@@ -76,38 +76,39 @@ class ClinicController extends Controller
     {
         return view('pages.poli', compact('pasien'));
     }
-    public function choose(Request $request, $pasien_id)
+    public function choose(Request $request)
     {
-        // Validasi data dari form
         $validatedData = $request->validate([
-            'poli' => 'required|in:Poli Umum,Poli Anak,Poli THT,Poli Spesialis,Poli Mata',
+            'nama' => 'required|string',
+            'NIK' => 'required|string|unique:tabel_umum,NIK|unique:tabel_anak,NIK|unique:tabel_mata,NIK|unique:tabel_tht,NIK|unique:tabel_spesialis,NIK',
+            'usia' => 'required|integer',
+            'alamat' => 'required|string',
+            'poli' => 'required|string'
         ]);
 
-        // Simpan data ke tabel yang sesuai
         switch ($validatedData['poli']) {
             case 'Poli Umum':
-                $antrian = new TabelUmum();
+                TabelUmum::create($validatedData);
                 break;
             case 'Poli Anak':
-                $antrian = new TabelAnak();
-                break;
-            case 'Poli THT':
-                $antrian = new TabelTHT();
-                break;
-            case 'Poli Spesialis':
-                $antrian = new TabelSpesialis();
+                TabelAnak::create($validatedData);
                 break;
             case 'Poli Mata':
-                $antrian = new TabelMata();
+                TabelMata::create($validatedData);
                 break;
+            case 'Poli THT':
+                TabelTht::create($validatedData);
+                break;
+            case 'Poli Spesialis':
+                TabelSpesialis::create($validatedData);
+                break;
+            default:
+                return redirect()->back()->withErrors(['poli' => 'Poli tidak valid']);
         }
 
-        $antrian->pasien_id = $pasien_id;
-        $antrian->save();
-
-        // Redirect sesuai dengan poli yang dipilih
-        return redirect()->route('pasiens.index')->with('success', 'Pasien ditambahkan ke antrian ' . $validatedData['poli']);
+        return redirect()->route('pasiens.index')->with('success', 'Pasien berhasil ditambahkan ke antrian.');
     }
 }
+
 
 

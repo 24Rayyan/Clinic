@@ -11,7 +11,7 @@ Route::get('/createdata', [ClinicController::class, 'create'])->name('createdata
 Route::post('/pasiens', [ClinicController::class, 'store'])->name('pasiens.store');
 Route::get('/pasiens/{pasien}', [ClinicController::class, 'show'])->name('pasiens.show');
 Route::get('/choose-poli/{pasien}', [ClinicController::class, 'choosePoli'])->name('pilihpoli');
-Route::post('/antrian/store/{pasien_id}', [ClinicController::class, 'choose'])->name('antrian.store');
+Route::post('/antrian/store', [ClinicController::class, 'choose'])->name('antrian.store');
 Route::get('posts', [ClinicController::class, 'search'])->name('pasiens.index');
 Route::get('posts/search', [ClinicController::class, 'search'])->name('pasiens.search');
 
@@ -23,4 +23,5 @@ Route::get('/Antrian/Mata', [AntrianController::class, 'mata'])->name('Antrian.M
 Route::get('/Antrian/Spesialis', [AntrianController::class, 'spesialis'])->name('Antrian.Spesialis');
 Route::get('/Antrian/THT', [AntrianController::class, 'tht'])->name('Antrian.THT');
 Route::get('/Antrian/Umum', [AntrianController::class, 'umum'])->name('Antrian.Umum');
-Route::get('/add/keterangan/{id}', [AntrianController::class, 'addKeterangan'])->name('add.keterangan');
+Route::get('/keterangan/{id}', [AntrianController::class, 'create'])->name('add.keterangan');
+Route::post('/keterangan/store', [AntrianController::class, 'push'])->name('store.keterangan');

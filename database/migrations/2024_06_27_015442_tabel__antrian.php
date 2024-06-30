@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('tabel_antrian', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pasien_id')->constrained('pasiens')->onDelete('cascade');
+            $table->string('nama');
+            $table->string('NIK');
+            $table->integer('usia');
+            $table->string('alamat');
             $table->string('poli');
             $table->timestamps();
         });

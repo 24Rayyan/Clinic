@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('tabel_mata', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pasien_id')->constrained('pasiens');
             $table->string('nama');
+            $table->string('NIK')->unique();;
             $table->integer('usia');
             $table->string('alamat');
             $table->timestamps();

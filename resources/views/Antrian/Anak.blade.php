@@ -15,11 +15,11 @@
         <tbody>
             @foreach ($tabel_anak as $pasien)
                 <tr>
-                    <td>{{ $pasien->pasien->nama }}</td>
-                    <td>{{ $pasien->pasien->usia }}</td>
-                    <td>{{ $pasien->pasien->alamat }}</td>
+                    <td>{{ $pasien->nama }}</td>
+                    <td>{{ $pasien->usia }}</td>
+                    <td>{{ $pasien->alamat }}</td>
                     <td>
-                        <a href="{{ route('add.keterangan', $pasien->id) }}" class="btn btn-primary">Add Keterangan</a>
+                        <a href="{{ route('add.keterangan', $pasien->NIK) }}" class="btn btn-primary">Add Keterangan</a>
                     </td>
                 </tr>
             @endforeach
