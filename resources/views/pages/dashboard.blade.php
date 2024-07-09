@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container mt-5 pt-4">
-    <h1>Good evening, <span class="text-primary">Admin</span></h1>
+    <h1>Hello, <span class="text-primary">Admin</span></h1>
     <hr>
 
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">

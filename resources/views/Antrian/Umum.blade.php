@@ -10,16 +10,18 @@
         </div>
     @endif
 
-    <div class="mb-4 text-right">
-        <form action="{{ route('restoreUmum') }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus semua data?');">
+    <div class="mb-4 d-flex justify-content-end">
+        <form action="{{ route('resetQueue', 'umum') }}" method="POST" class="mr-2">
+            @csrf
+            <button type="submit" class="btn btn-danger">Reset Nomor Antrian</button>
+        </form>
+    
+        <form action="{{ route('restoreUmum') }}" method="POST">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Restore</button>
         </form>
-        <form action="{{ route('resetQueue') }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin mereset nomor antrian?');">
-            @csrf
-            <button type="submit" class="btn btn-danger">Reset Nomor Antrian</button>
-        </form>
+    </div>
     </div>
 
     <table class="table table-striped">

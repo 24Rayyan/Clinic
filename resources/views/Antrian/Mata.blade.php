@@ -11,7 +11,7 @@
     @endif
 
     <div class="mb-4 d-flex justify-content-end">
-        <form action="{{ route('resetQueue') }}" method="POST" class="mr-2">
+        <form action="{{ route('resetQueue', 'mata') }}" method="POST" class="mr-2">
             @csrf
             <button type="submit" class="btn btn-danger">Reset Nomor Antrian</button>
         </form>

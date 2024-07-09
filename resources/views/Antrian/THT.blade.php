@@ -10,8 +10,13 @@
         </div>
     @endif
 
-    <div class="mb-4 text-right">
-        <form action="{{ route('restoreTHT') }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus semua data?');">
+    <div class="mb-4 d-flex justify-content-end">
+        <form action="{{ route('resetQueue', 'tht') }}" method="POST" class="mr-2">
+            @csrf
+            <button type="submit" class="btn btn-danger">Reset Nomor Antrian</button>
+        </form>
+    
+        <form action="{{ route('restoreTHT') }}" method="POST">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Restore</button>

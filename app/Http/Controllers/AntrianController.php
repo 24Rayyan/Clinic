@@ -130,12 +130,13 @@ class AntrianController extends Controller
         return redirect()->route('dashboard');
     }
 
-    public function resetQueue()
-{
-    
-    session(['nomor_antrian' => 1]); 
-    return redirect()->route('dashboard');
-}
+    public function resetQueue($poli)
+    {
+        $nomorAntrianKey = 'nomor_antrian_' . $poli;
+        session([$nomorAntrianKey => 1]);
+
+        return redirect()->route('dashboard');
+    }
 
 
 

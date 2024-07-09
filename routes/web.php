@@ -29,7 +29,7 @@ Route::get('/keterangan/{id}', [AntrianController::class, 'create'])->name('add.
 Route::post('/keterangan/store', [AntrianController::class, 'push'])->name('store.keterangan');
 Route::get('/dashboard', [AntrianController::class, 'index'])->name('dashboard');
 Route::post('/next/{poli}', [AntrianController::class, 'nextNomorAntrian'])->name('next');
-Route::post('/reset-queue', [AntrianController::class, 'resetQueue'])->name('resetQueue');
+Route::post('/reset/{poli}', [AntrianController::class, 'resetQueue'])->name('resetQueue');
 
 //Pasien Controller
 Route::get('/pasiens/{pasien}/edit', [PasienController::class, 'edit'])->name('pasiens.edit');
