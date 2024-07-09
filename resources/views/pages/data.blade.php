@@ -44,8 +44,8 @@
         </tbody>
     </table>
     <!-- Link Pagination -->
-    <div class="d-flex justify-content-center" >
-        //pagination masih di coba
+    <div class="d-flex" style="float: right;" >
+        {{ $pasiens->links() }}
     </div>
 </div>  
 @endsection

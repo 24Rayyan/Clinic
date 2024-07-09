@@ -12,16 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('keterangan', function (Blueprint $table) {
-            $table->id();
-            $table->string('pasien_NIK'); // Kolom untuk menampung NIK pasien
-            $table->foreign('pasien_NIK')->references('NIK')->on('pasiens')->onDelete('cascade'); // Relasi foreign key
+            $table->string('NIK');
             $table->text('keterangan');
-            $table->timestamp('tanggal')->default(now()); // Default value yang disarankan
             $table->timestamps();
-        });
-
-        Schema::table('keterangan', function (Blueprint $table) {
-            $table->foreign('pasien_NIK')->references('NIK')->on('pasiens')->onDelete('cascade');
         });
     }
 

@@ -9,7 +9,7 @@ class keterangan extends Model
 {
     use HasFactory;
     protected $table = 'keterangan';
-    protected $fillable = ['NIK', 'keterangan', 'tanggal'];
+    protected $fillable = ['NIK', 'keterangan'];
     
     public function pasien()
     {

@@ -10,7 +10,7 @@
     </div>
     <form action="{{ route('store.keterangan') }}" method="POST">
         @csrf
-        <input type="hidden" name="pasien_id" value="{{ $pasien->NIK }}">
+        <input type="hidden" name="pasien_NIK" value="{{ $pasien->NIK }}">
         <div class="form-group">
             <label for="keterangan">Keterangan:</label>
             <textarea name="keterangan" id="keterangan" class="form-control" rows="4" required></textarea>

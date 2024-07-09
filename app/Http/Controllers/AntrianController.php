@@ -45,31 +45,100 @@ class AntrianController extends Controller
         return view('Antrian.Spesialis', compact('tabel_spesialis'));
     }
 
-    public function create($id)
+    public function create($NIK)
     {
-        $pasien = pasien::findOrFail($id);
-        // Tambahkan logika untuk menambahkan keterangan di sini
-
+        $pasien = pasien::where('NIK', $NIK)->firstOrFail();
         return view('pages.keterangan', compact('pasien'));
     }
     public function push(Request $request)
     {
         $validatedData = $request->validate([
-            'NIK' => 'required|string|exists:pasiens,NIK',
+            'pasien_NIK' => 'required|string',
             'keterangan' => 'required|string',
         ]);
 
-        $pasien = Pasien::where('NIK', $validatedData['NIK'])->firstOrFail();
-
-        keterangan::create([
-            'NIK' => $pasien->NIK,
+        // Simpan data ke tabel keterangan
+        Keterangan::create([
+            'NIK' => $validatedData['pasien_NIK'],
             'keterangan' => $validatedData['keterangan'],
-            'tanggal' => now(),
         ]);
-
-        return redirect()->route('index', $pasien->NIK,)->with('success', 'Keterangan berhasil ditambahkan.');
+        return redirect()->route('dashboard');
+        
     }
 
+
+    public function getTotalAntrian()
+    {
+        $totalAntrian = TabelMata::count();
+        return $totalAntrian;
+    }
+
+    public function index()
+    {
+        $nomorAntrianMata = session('nomor_antrian_mata', 1);
+        $nomorAntrianUmum = session('nomor_antrian_umum', 1);
+        $nomorAntrianAnak = session('nomor_antrian_anak', 1);
+        $nomorAntrianTHT = session('nomor_antrian_tht', 1);
+        $nomorAntrianSpesialis = session('nomor_antrian_spesialis', 1);
     
+        $totalAntrianMata = TabelMata::count();
+        $totalAntrianUmum = TabelUmum::count();
+        $totalAntrianAnak = TabelAnak::count();
+        $totalAntrianTHT = TabelTHT::count();
+        $totalAntrianSpesialis = TabelSpesialis::count();
+    
+        return view('pages.dashboard', compact(
+            'nomorAntrianMata', 'totalAntrianMata',
+            'nomorAntrianUmum', 'totalAntrianUmum',
+            'nomorAntrianAnak', 'totalAntrianAnak',
+            'nomorAntrianTHT', 'totalAntrianTHT',
+            'nomorAntrianSpesialis', 'totalAntrianSpesialis'
+        ));
+    }
+
+    public function nextNomorAntrian(Request $request, $poli)
+    {
+        $nomorAntrianSekarangKey = 'nomor_antrian_' . $poli;
+        $nomorAntrianSekarang = session($nomorAntrianSekarangKey, 1);
+    
+        switch ($poli) {
+            case 'mata':
+                $totalAntrian = TabelMata::count();
+                break;
+            case 'umum':
+                $totalAntrian = TabelUmum::count();
+                break;
+            case 'anak':
+                $totalAntrian = TabelAnak::count();
+                break;
+            case 'tht':
+                $totalAntrian = TabelTHT::count();
+                break;
+            case 'spesialis':
+                $totalAntrian = TabelSpesialis::count();
+                break;
+            default:
+                $totalAntrian = 0;
+                break;
+        }
+    
+        if ($nomorAntrianSekarang < $totalAntrian) {
+            $nomorAntrianSekarang++;
+            session([$nomorAntrianSekarangKey => $nomorAntrianSekarang]);
+        }
+    
+        return redirect()->route('dashboard');
+    }
+
+    public function resetQueue()
+{
+    
+    session(['nomor_antrian' => 1]); 
+    return redirect()->route('dashboard');
+}
+
+
+
+
 }
 

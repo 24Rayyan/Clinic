@@ -10,3 +10,5 @@ class TabelAnak extends Model
     
     protected $fillable = ['nama', 'NIK', 'usia', 'alamat'];
 }
+
+

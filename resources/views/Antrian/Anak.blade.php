@@ -1,9 +1,24 @@
 @extends('welcome')
 
 @section('content')
-<div class="container">
-    <h1>Antrian Poli Anak</h1>
-    <table class="table">
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Antrian Poli Anak</h1>
+
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <div class="mb-4 text-right">
+        <form action="{{ route('restoreAnak') }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus semua data?');">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">Restore</button>
+        </form>
+    </div>
+
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Nama</th>

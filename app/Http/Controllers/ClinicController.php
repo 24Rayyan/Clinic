@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Antrian;
+
 use Illuminate\Http\Request;
 use App\Models\Pasien;
 use App\Models\TabelAnak;
@@ -10,7 +10,7 @@ use App\Models\TabelMata;
 use App\Models\TabelSpesialis;
 use App\Models\TabelUmum;
 use App\Models\TabelTHT;
-use Illuminate\Support\Facades\Log;
+
 
 
 
@@ -36,9 +36,9 @@ class ClinicController extends Controller
                 ->orWhere('NIK', 'LIKE', "%{$search}%")
                 ->orWhere('Usia', 'LIKE', "%{$search}%")
                 ->orWhere('Alamat', 'LIKE', "%{$search}%")
-                ->paginate(10);
+                ->simplePaginate(10);
         } else {
-            $pasiens = Pasien::paginate(10);
+            $pasiens = Pasien::simplePaginate(10);
         }
 
         return view('pages.data', compact('pasiens'));
@@ -108,6 +108,9 @@ class ClinicController extends Controller
 
         return redirect()->route('pasiens.index')->with('success', 'Pasien berhasil ditambahkan ke antrian.');
     }
+
+
+
 }
 
 

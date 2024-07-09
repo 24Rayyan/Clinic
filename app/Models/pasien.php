@@ -34,4 +34,9 @@ class pasien extends Model
     {
         return $this->hasOne(TabelMata::class);
     }
+
+    public function keterangans()
+    {
+        return $this->hasMany(Keterangan::class, 'NIK', 'NIK');
+    }
 }
