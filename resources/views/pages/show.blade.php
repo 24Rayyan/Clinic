@@ -3,7 +3,7 @@
     Clinic | Show Pasien
 @section('content')
 <div class="container mt-5">
-    <h1 class="text-center mb-4">Detail Patient<sup><img src="{{asset('addon/hospital.png')}}" alt=""></sup></h1>
+    <h1 class="text-center mb-4">Detail Patient<sup><img src="{{asset('addon/hospital.png')}}" style="height:50px" alt=""></sup></h1>
     <div class="card">
         <div class="card-body">
             <div class="ml-3">
@@ -15,13 +15,13 @@
 
             <div class="card mt-4">
                 <div class="card-header text-black">
-                    Information
+                    <span style="font-weight: 600">Information</span>
                 </div>
                 <ul class="list-group list-group-flush">
                     @foreach($pasien->keterangans as $keterangan)
                     <li class="list-group-item">
                         <div class="card-body">
-                            <p class="card-text mb-1">{{ $keterangan->keterangan }}</p>
+                            <p class="card-text ">{{ $keterangan->keterangan }}</p>
                             <small class="text-muted">{{ $keterangan->created_at->format('d M Y') }}</small>
                             <hr>
                         </div>

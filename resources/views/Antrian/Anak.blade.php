@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div class="container mt-5">
-    <h1 class="text-center mb-4">Antrian Poli Anak<sup><img src="{{asset('addon/hospital.png')}}" alt=""></sup></h1>
+    <h1 class="text-center mb-4">Antrian Poli Anak<sup><img src="{{asset('addon/hospital.png')}}" style="height: 50px" alt=""></sup></h1>
 
     @if(session('success'))
         <div class="alert alert-success">

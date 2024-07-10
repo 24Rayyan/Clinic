@@ -27,7 +27,7 @@
 
 <div class="container mt-5">
     <div class="flex items-center">
-        <h1 class="mr-2">Welcome to The Clinicare<sup><img src="{{asset('addon/hospital.png')}}" alt=""></sup></h1>
+        <h1 class="mr-2">Welcome to The Clinicare<sup><img src="{{asset('addon/hospital.png')}}" style="height:50px" alt=""></sup></h1>
     </div>
     <h2>Insert Data Patient</h2>
 

@@ -19,7 +19,7 @@
     }
 </style>
 <div class="container mt-5 pt-4">
-    <h1><span style="font-weight: 600">Hello,</span> <span class="text-primary">Admin</span><sup><img src="{{asset('addon/hospital.png')}}" alt=""></sup></h1>
+    <h1><span style="font-weight: 600">Hello,</span> <span class="text-primary">Admin</span><sup><img src="{{asset('addon/hospital.png')}}" style="height: 50px" alt=""></sup></h1>
     <hr style="margin-bottom:50px">
 
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">

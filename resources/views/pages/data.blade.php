@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div class="container">
-    <h1 class="mb-4">Patients Appointment</h1>
+    <h1 class="mb-4">Patients Appointment <sup><img src="{{asset('addon/hospital.png')}}" style="height:50px" alt=""></sup></h1>
     <div class="container" style="display: inline">
         <div class="mb-4" style="float:right">
             <form action="{{ route('pasiens.search') }}" method="GET" class="form-inline">
@@ -45,10 +45,7 @@
     </table>
 
     <!-- Link Pagination -->
-    <div class="paginate">
-        
-    </div>
-    <div class="d-flex" style="float: right;" >
+    <div class="d-flex" style="float: right; margin-top:10px; margin-bottom: 50px; border-radius: 30px" >
         {{ $pasiens->links() }}
     </div>
     <div class="d-flex" style="float: left;">

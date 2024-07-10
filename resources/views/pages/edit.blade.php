@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div class="container mt-5">
-    <h1 class="text-center" style="margin-bottom: 50px; font-weight : 600">Edit Patient<sup><img src="{{asset('addon/hospital.png')}}" alt=""></sup></h1>
+    <h1 class="text-center" style="margin-bottom: 50px; font-weight : 600">Edit Patient<sup><img src="{{asset('addon/hospital.png')}}" style="height:50px" alt=""></sup></h1>
     <div class="card" >
         <div class="card-body">
             <form action="{{ route('pasiens.update', $pasien->id) }}" method="POST">

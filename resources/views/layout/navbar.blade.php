@@ -96,8 +96,8 @@ table td, table th {
 <div class="topbar">
     <div class="container-fluid">
         <div class="d-flex align-items-center">
-            <img src="{{ asset('addon/hospital.png') }}" alt="Hospital Icon" style="height: 30px; margin-right: 10px;">
-            <h4 class="mb-0 ml-3"  style="color: black">Clinic Admin</h4>
+            <img src="{{ asset('addon/hospital.png') }}" alt="Hospital Icon" style="height: 50px; margin-right: 10px;">
+            <h4 class="mb-0 ml-3"  style="color: black">Clinicare</h4>
         </div>
     </div>
 </div>

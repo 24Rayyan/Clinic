@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div class="container">
-    <h1 style="margin-bottom:20px">Add Description<sup><img src="{{asset('addon/hospital.png')}}" alt=""></sup></h1>
+    <h1 style="margin-bottom:20px">Add Description<sup><img src="{{asset('addon/hospital.png')}}"style="height:50px" alt=""></sup></h1>
 
     <div>
         <h3>Data Patien:</h3>

@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div class="container mt-5">
-    <h1 class="text-center mb-4">Antrian Poli THT<sup><img src="{{asset('addon/hospital.png')}}" alt=""></sup></h1>
+    <h1 class="text-center mb-4">Antrian Poli THT<sup><img src="{{asset('addon/hospital.png')}}"   style="height: 50px" alt=""></sup></h1>
     <div class="mb-4 d-flex justify-content-end">
         <form action="{{ route('resetQueue', 'tht') }}" method="POST" class="mr-2">
             @csrf

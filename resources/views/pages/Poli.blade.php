@@ -5,7 +5,7 @@
 <div class="container mt-5">
     <div class="container">
         <div class="container">
-            <h1 style="font-weight: 700">Choose Poly <sup><img src="{{asset('addon/hospital.png')}}" alt=""></sup></h1>
+            <h1 style="font-weight: 700">Choose Poly <sup><img src="{{asset('addon/hospital.png')}}"style="height:50px" alt=""></sup></h1>
             <div>
                 <h3 style="font-weight: 500; margin-top:30px">Data Patient:</h3>
                 <p><span style="font-weight: 700">Name:</span> {{ $pasien->nama }}</p>
