@@ -1,21 +1,24 @@
 @extends('welcome')
-
+@section('tittle')
+    Clinic | Keterangan
+@endsection
 @section('content')
 <div class="container">
-    <h1>Add Keterangan</h1>
+    <h1 style="margin-bottom:20px">Add Description<sup><img src="{{asset('addon/hospital.png')}}" alt=""></sup></h1>
+
     <div>
-        <h3>Data Pasien:</h3>
-        <p><strong>Nama:</strong> {{ $pasien->nama }}</p>
-        <p><strong>Alamat:</strong> {{ $pasien->alamat }}</p>
+        <h3>Data Patien:</h3>
+        <p><strong>Full Name:</strong> {{ $pasien->nama }}</p>
+        <p><strong>Address:</strong> {{ $pasien->alamat }}</p>
     </div>
     <form action="{{ route('store.keterangan') }}" method="POST">
         @csrf
         <input type="hidden" name="pasien_NIK" value="{{ $pasien->NIK }}">
-        <div class="form-group">
-            <label for="keterangan">Keterangan:</label>
+        <div class="form-group mt-5" >
+            <label for="keterangan">Description:</label>
             <textarea name="keterangan" id="keterangan" class="form-control" rows="4" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Simpan Keterangan</button>
+        <button type="submit" class="btn btn-primary">Save</button>
     </form>
 </div>
 @endsection

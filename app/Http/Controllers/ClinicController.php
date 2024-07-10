@@ -16,6 +16,8 @@ use App\Models\TabelTHT;
 
 class ClinicController extends Controller
 {
+
+    //READ DATA TABEL PASIEN
     public function index()
     {
         $pasiens = Pasien::all();
@@ -26,6 +28,7 @@ class ClinicController extends Controller
     {
         return view('pages.dashboard');
     }
+
 
     //search sama pagination
     public function search(Request $request)
@@ -43,6 +46,7 @@ class ClinicController extends Controller
 
         return view('pages.data', compact('pasiens'));
     }
+
 
 
     //create data
@@ -65,13 +69,13 @@ class ClinicController extends Controller
         return redirect()->route('pasiens.index')->with('success', 'Patient data added successfully!');
     }
 
-    //show data 
+    //show data pasien
     public function show(Pasien $pasien)
     {
         return view('pages.show', compact('pasien'));
     }
 
-    //poli
+    //PILIH POLI 
     public function choosePoli(Pasien $pasien)
     {
         return view('pages.poli', compact('pasien'));

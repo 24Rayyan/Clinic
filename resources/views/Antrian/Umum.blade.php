@@ -1,15 +1,10 @@
 @extends('welcome')
-
+@section('tittle')
+    Clinic | Umum
+@endsection
 @section('content')
 <div class="container mt-5">
-    <h1 class="text-center mb-4">Antrian Poli Umum</h1>
-
-    @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
-
+    <h1 class="text-center mb-4">Antrian Poli Umum<sup><img src="{{asset('addon/hospital.png')}}" alt=""></sup></h1>
     <div class="mb-4 d-flex justify-content-end">
         <form action="{{ route('resetQueue', 'umum') }}" method="POST" class="mr-2">
             @csrf
@@ -19,9 +14,8 @@
         <form action="{{ route('restoreUmum') }}" method="POST">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-danger">Restore</button>
+            <button type="submit" class="btn btn-danger"><img src="{{asset ('addon/refresh.png')}}" style="height: 25px; margin-right:8px" alt="">Restore</button>
         </form>
-    </div>
     </div>
 
     <table class="table table-striped">

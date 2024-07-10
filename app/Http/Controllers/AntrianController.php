@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Antrian;
 use App\Models\keterangan;
 use App\Models\pasien;
 use App\Models\TabelAnak;
@@ -12,6 +11,7 @@ use App\Models\TabelSpesialis;
 use App\Models\TabelTHT;
 use App\Models\TabelUmum;
 
+// VIEW TABEL ANTRIAN POLI
 class AntrianController extends Controller
 {
     public function umum()
@@ -45,6 +45,8 @@ class AntrianController extends Controller
         return view('Antrian.Spesialis', compact('tabel_spesialis'));
     }
 
+
+    // CREATE KETERANGAN
     public function create($NIK)
     {
         $pasien = pasien::where('NIK', $NIK)->firstOrFail();
@@ -57,7 +59,6 @@ class AntrianController extends Controller
             'keterangan' => 'required|string',
         ]);
 
-        // Simpan data ke tabel keterangan
         Keterangan::create([
             'NIK' => $validatedData['pasien_NIK'],
             'keterangan' => $validatedData['keterangan'],
@@ -67,6 +68,7 @@ class AntrianController extends Controller
     }
 
 
+    //NOMER ANTRIAN 
     public function getTotalAntrian()
     {
         $totalAntrian = TabelMata::count();

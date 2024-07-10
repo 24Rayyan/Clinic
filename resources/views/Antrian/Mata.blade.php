@@ -1,8 +1,10 @@
 @extends('welcome')
-
+@section('tittle')
+    Clinic | Antrian Mata
+@endsection
 @section('content')
 <div class="container mt-5">
-    <h1 class="text-center mb-4">Antrian Poli Mata</h1>
+    <h1 class="text-center mb-4">Antrian Poli Mata<sup><img src="{{asset('addon/hospital.png')}}" alt=""></sup></h1>
 
     @if(session('success'))
         <div class="alert alert-success">
@@ -19,7 +21,7 @@
         <form action="{{ route('restoreMata') }}" method="POST">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-danger">Restore</button>
+            <button type="submit" class="btn btn-danger"><img src="{{asset ('addon/refresh.png')}}" style="height: 25px; margin-right:8px" alt="">Restore</button>
         </form>
     </div>
 

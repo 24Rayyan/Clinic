@@ -1,10 +1,37 @@
 @extends('welcome')
-
+@section('tittle')
+    Clinic | Create Data
+@endsection
 @section('content')
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+    h1{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
+    }
+
+    h2{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
+    }
+</style>
+
 <div class="container mt-5">
-    <h1>Welcome to The Clinicare</h1>
+    <div class="flex items-center">
+        <h1 class="mr-2">Welcome to The Clinicare<sup><img src="{{asset('addon/hospital.png')}}" alt=""></sup></h1>
+    </div>
     <h2>Insert Data Patient</h2>
-    <form action="{{ route('pasiens.store') }}" method="POST">
+
+    <form action="{{ route('pasiens.store') }}" method="POST" style="margin-top: 80px">
         @csrf
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -12,7 +39,7 @@
                 <input type="text" class="form-control" id="nama" name="nama" placeholder="Enter name here">
             </div>
             <div class="form-group col-md-6">
-                <label for="NIK">ID Number</label>
+                <label for="NIK">NIK</label>
                 <input type="number" class="form-control" id="NIK" name="NIK" placeholder="0000000000000000">
             </div>
         </div>

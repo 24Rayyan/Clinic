@@ -11,16 +11,20 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
 
-    <title>Hello, world!</title>
+    <title>@yield('tittle')</title>
   </head>
   <body>
     <style>
-        .content {
-        margin-left: 250px;
-        padding: 20px;
-        margin-top: 60px;
-        width: calc(100% - 250px);
-    }
+      p h1 h2 h3 h4 h5{
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      font-variation-settings:
+        "slnt" 0;
+       }
+       @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@163&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     </style>
     @include('layout.navbar')
     <div class="content">
