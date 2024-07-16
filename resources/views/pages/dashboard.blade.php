@@ -29,7 +29,7 @@
                 <h3 class="mb-5">Poli Mata</h3>
                 <div class="d-flex flex-row">
                     <div class="card m-2 p-3 " style="flex: 1;">
-                        <h4>Nomor Antrian Anda:</h4>
+                        <h4>Nomor Antrian</h4>
                         <p>{{ $nomorAntrianMata ?? 'Belum ada antrian' }}</p>
                     </div>
                     <div class="card m-2 p-3 " style="flex: 1;">
@@ -56,7 +56,7 @@
                 <h3 class="mb-5">Poli Umum</h3>
                 <div class="d-flex flex-row">
                     <div class="card m-2 p-3 " style="flex: 1;">
-                        <h4>Nomor Antrian Anda:</h4>
+                        <h4>Nomor Antrian</h4>
                         <p>{{ $nomorAntrianUmum ?? 'Belum ada antrian' }}</p>
                     </div>
                     <div class="card m-2 p-3 " style="flex: 1;">
@@ -83,7 +83,7 @@
                 <h3 class="mb-5">Poli Anak</h3>
                 <div class="d-flex flex-row">
                     <div class="card m-2 p-3 " style="flex: 1;">
-                        <h4>Nomor Antrian Anda:</h4>
+                        <h4>Nomor Antrian</h4>
                         <p>{{ $nomorAntrianAnak ?? 'Belum ada antrian' }}</p>
                     </div>
                     <div class="card m-2 p-3 " style="flex: 1;">
@@ -110,7 +110,7 @@
                 <h3 class="mb-5">Poli THT</h3>
                 <div class="d-flex flex-row">
                     <div class="card m-2 p-3 " style="flex: 1;">
-                        <h4>Nomor Antrian Anda:</h4>
+                        <h4>Nomor Antrian</h4>
                         <p>{{ $nomorAntrianTHT ?? 'Belum ada antrian' }}</p>
                     </div>
                     <div class="card m-2 p-3 " style="flex: 1;">
@@ -137,7 +137,7 @@
                 <h3 class="mb-5">Poli Spesialis</h3>
                 <div class="d-flex flex-row">
                     <div class="card m-2 p-3 " style="flex: 1;">
-                        <h4>Nomor Antrian Anda:</h4>
+                        <h4>Nomor Antrian</h4>
                         <p>{{ $nomorAntrianSpesialis ?? 'Belum ada antrian' }}</p>
                     </div>
                     <div class="card m-2 p-3 " style="flex: 1;">

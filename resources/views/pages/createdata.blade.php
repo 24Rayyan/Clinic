@@ -36,21 +36,21 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="nama">Full Name</label>
-                <input type="text" class="form-control" id="nama" name="nama" placeholder="Enter name here">
+                <input type="text" class="form-control" id="nama" name="nama" placeholder="Enter name here" required>
             </div>
             <div class="form-group col-md-6">
                 <label for="NIK">NIK</label>
-                <input type="number" class="form-control" id="NIK" name="NIK" placeholder="0000000000000000">
+                <input type="number" class="form-control" id="NIK" name="NIK" placeholder="0000000000000000" required>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="usia">Age</label>
-                <input type="number" class="form-control" id="usia" name="usia" placeholder="Age">
+                <input type="number" class="form-control" id="usia" name="usia" placeholder="Age" required>
             </div>
             <div class="form-group col-md-6">
                 <label for="alamat">Address</label>
-                <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Enter your Address">
+                <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Enter your Address" required>
             </div>
         </div>
         <button type="submit" class="btn btn-primary" style="width: 200px;margin-top:50px">Save</button>
