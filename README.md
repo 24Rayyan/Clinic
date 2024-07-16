@@ -1,11 +1,5 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://github.com/24Rayyan/Clinic/blob/34ace1f4cef5d41767660127ebf6fe168c2c36b0/public/addon/hospital.png" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="#" target="_blank"><img src="https://github.com/24Rayyan/Clinic/blob/34ace1f4cef5d41767660127ebf6fe168c2c36b0/public/addon/hospital.png" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
     ## Health Care
 Healthcare adalah sebuah platform online yang membantu klinik dan puskesmas dalam mengelola antrian pasien dan proses administrasi. Sistem ini dirancang untuk memberikan kemudahan bagi pasien dan staf klinik/puskesmas.
