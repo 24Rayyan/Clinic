@@ -34,11 +34,23 @@ Pada bagian ini, admin dapat melihat antrian pasien di setiap poli. Berikut lang
 2. Pilih poli yang ingin dilihat antriannya dari daftar yang muncul.
 3. Antrian pasien di poli yang dipilih akan ditampilkan pada layar.
 
-   #Add Keterangan
+   ## Add Keterangan
 Pada bagian "Queued", admin dapat memberikan keterangan mengenai keadaan pasien. Berikut langkah-langkahnya:
 
 1. Klik tombol "Add Keterangan" pada baris data pasien yang ingin ditambahkan keterangan.
 2. Ketikkan keterangan mengenai keadaan pasien pada kolom "Description". Keterangan dapat berupa informasi tentang gejala pasien, riwayat kesehatan pasien, atau alergi    pasien.
 3. Klik tombol "Save" untuk menyimpan keterangan.
+
+    ## Kontributor
+MUHHAMAD RAYYAN RIFQI PRATAMA - Backend Web Developer & Project Coordinator.
+https://github.com/24rayyan
+FARHAN NUR FUAD HERAWAN HARTAMAN - Frontend Web Developer.
+https://github.com/FarhanNurFuad
+MUHAMMAD FATIH HIDAYATULLAH - UI/UX Designer.
+https://github.com/fatihavec
+FREDERICK NEO KAIAMAN - Database Designer. 
+https://github.com/FrederickNeo12
+
+   
 
 
